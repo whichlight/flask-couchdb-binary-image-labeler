@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Image Classifier</title>
+<link rel="stylesheet" href="../static/style.css" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+	<div id="container">
+	<div id="top">	
+		<h1>Is there a person in the image?</h1>
+		<div id="choices">
+			<button  onclick="post_result(1);"><b>y</b>es</button>
+			<button  onclick="post_result(0);"><b>n</b>o</button> 
+
+			<script type="text/javascript">
+			function post_result(val){
+				//create form and submit data
+				  var form = document.createElement('form');
+				  form.setAttribute('method', 'post');
+				  post_str = '/?p='+val+'&id={{pic.key}}';
+				  form.setAttribute('action', post_str);
+				
+			  	  form.style.display = 'hidden';
+			    	  document.body.appendChild(form)
+			    	  form.submit();	
+			
+			}
+				$(document).keydown(function(e){
+				    if (e.keyCode == 89) { 
+				    	post_result(1);	
+					}
+				    if(e.keyCode==78){
+					post_result(0);
+				   }
+				});
+			</script>
+
+		</div><!--choices-->
+	</div> <!--top -->
+	
+
+<img src="static/images/{{pic.value.src}}"/>
+	<br><br>
+	<a href="/done">View completed images</a><br><br>
+	binary image labeler for training classifiers <br>
+	by <a href="http://www.whichlight.com">whichlight</a>
+	</div><!--container -->
+</body>
+</html>

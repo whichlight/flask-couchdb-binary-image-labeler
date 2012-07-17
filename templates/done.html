@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<title>Image Classifier</title>
+<link rel="stylesheet" href="../static/style.css" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+	<div id="container">
+	<div id="top">	
+		<h1>Completed Images</h1>	
+		<div id="continue"><a href="/">Continue labeling images</a></div>
+	</div> <!--top -->
+	
+	{% for pic in pics %}
+	{% if pic.value.isperson=="1" %}
+	<img class="yes" id={{pic.key}} src="static/images/{{pic.value.src}}"/>
+	{% else %}
+	<img class="no" id={{pic.key}} src="static/images/{{pic.value.src}}"/>
+	{% endif %}
+	{% endfor %}	
+	<br><br>
+	binary image labeler for training classifiers <br>
+	by <a href="http://www.whichlight.com">whichlight</a>
+	</div><!--container -->
+	
+
+</body>
+</html>
