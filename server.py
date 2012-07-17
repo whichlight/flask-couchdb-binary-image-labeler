@@ -18,9 +18,6 @@ app = Flask(__name__)
 couch = couchdb.Server()
 db = couch['pple_training'] 
 
-@app.route("/images/<name>")
-def getImage(name):
-	return flask.send_from_directory('/static/images',name)
 
 @app.route("/", methods=['GET', 'POST'])
 def tolabel():
