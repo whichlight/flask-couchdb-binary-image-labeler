@@ -46,11 +46,11 @@ labeling. This will automatically pull up an unlabeled image.  You can click
 Note
 -----
 Things you will want to edit for your own purposes:
--the title question of the labeled page to be specific to whatever attribute
+*the title question of the labeled page to be specific to whatever attribute
 you're looking for
--change the attribute in the couchdb.  Right now I use isperson since I am
+*change the attribute in the couchdb.  Right now I use isperson since I am
 labeling whether or not there is a person in the image. 
--change the db name to whatever makes sense for your application.  This can be
+*change the db name to whatever makes sense for your application.  This can be
 done in the images_into_couch script. I call mine pple_training since thats the
 classifier I'm collecting for. 
  
